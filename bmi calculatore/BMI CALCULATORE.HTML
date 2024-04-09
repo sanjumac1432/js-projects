@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: yellow;
+
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1200px;
+            height: 650px;
+            margin: auto;
+        }
+
+        .main {
+            position: relative;
+        }
+
+        .bmi {
+            box-shadow: 0px 15px 15px #000000;
+
+            width: 500px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            border-radius: 5px;
+            justify-content: center;
+            background-color: rgba(255, 60, 0, 0.895);
+
+        }
+
+        .bmi h1 {
+            color: white;
+            padding: 0px 12px;
+            font-size: 60px;
+            font-weight: bold;
+            font-family: math;
+            margin: 0px;
+
+        }
+
+        .bmi p {
+
+            color: white;
+            padding: 0px 12px;
+            font-size: 20px;
+            text-transform: capitalize;
+            width: 30%;
+            font-family: math;
+        }
+
+        .calc {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            position: absolute;
+            background-color: white;
+            width: 300px;
+            top: -70px;
+            border-radius: 5px;
+            height: 450px;
+            right: 20px;
+        }
+
+
+        .calc label {
+            color: #000000c4;
+            font-size: 20px;
+            padding: 12px;
+            font-weight: 600;
+        }
+
+        .calc input {
+            padding: 12px;
+            border: none;
+            border-bottom: 2px solid rgb(0, 0, 0);
+        }
+
+        .calc input:focus {
+            outline: none;
+        }
+
+        .calc input::placeholder {
+            font-weight: bold;
+            text-transform: capitalize;
+            font-size: 14px;
+        }
+
+
+
+        .calc button {
+            color: white;
+            border: none;
+            display: inline-block;
+            width: 90%;
+            margin-top: 12px;
+            padding: 10px 30px;
+            background-color: rgba(255, 60, 0);
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        #result {
+            padding: 12px;
+            margin: 12px;
+            color: black;
+            font-size: 22px;
+            text-align: center;
+            text-transform: capitalize;
+            font-weight: bold;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="bmi">
+                <h1>BMI</h1>
+                <p>body mask index</p>
+            </div>
+            <div class="calc">
+                <label for="weight">weight</label>
+                <input type="text" id="weight" placeholder="enter your weight in kg">
+
+                <label for="height">height</label>
+                <input type="text" id="height" placeholder="enter your hight in feet">
+
+
+                <div id="result"></div>
+
+                <button id="btn" onclick="bmiCalculate()">calculate</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+
+
+
+        function bmiCalculate() {
+
+            let weight = parseInt(document.getElementById("weight").value);
+            let height = parseInt(document.getElementById("height").value);
+
+            let metter = height * 30.48 / 100;
+
+            let bmi = (weight / (metter * metter)).toFixed(2);
+
+
+            if (weight.value && height.value == "") {
+                alert("something went wrong");
+            }
+
+
+            if (bmi < 18.5) {
+                let result = document.getElementById("result").innerText = `under weight ${bmi}`;
+            }
+
+            else if (bmi >= 18.5 && bmi <= 24.9) {
+                let result = document.getElementById("result").innerText = `Normal weight ${bmi}`;
+            }
+
+            else if (bmi > 25.0 && bmi <= 29.9) {
+                let result = document.getElementById("result").innerText = `Overweight ${bmi}`;
+            }
+
+            else {
+                let result = document.getElementById("result").innerText = `obesity ${bmi}`;
+            }
+
+
+        }
+
+
+    </script>
+</body>
+
+</html>

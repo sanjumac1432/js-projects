@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess the number</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 80vh;
+            background-color: red;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1200px;
+            margin: auto;
+          
+        }
+
+        .main {
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid black;
+            text-align: center;
+            background-color: aqua;
+        }
+
+        .main h1 {
+            text-transform: capitalize;
+            font-size: 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+/* 
+        .main p {
+            text-transform: capitalize;
+            margin: 10px;
+            color: rgb(0, 0, 0);
+            font-size: 18px;
+            font-weight: bold;
+        } */
+
+        .inputbox {
+            margin: 10px;
+            padding: 10px;
+        }
+
+        .inputbox input {
+            font-size: 18px;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            border-radius: 10px;
+            text-transform: capitalize;
+        }
+
+        .inputbox input:focus {
+            outline: none;
+            border: 2px solid green;
+        }
+
+        .check {
+            padding: 10px;
+            width: 30%;
+            margin: 10px;
+            border-radius: 50px;
+            color: white;
+            font-size: 19px;
+            font-weight: bold;
+            background: red;
+        }
+
+        .check:hover {
+            border: 2px solid white;
+            background-color: green;
+        }
+
+        .result {
+          
+            width: 100%;
+            padding: 20px;
+            margin: 10px;
+            font-size: 19px;
+            font-weight: bold;
+           text-transform: capitalize;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="main">
+
+
+
+            <h1>guess my birthdate</h1>
+        
+            <div class="inputbox">
+                <input type="text" id="number" placeholder="enter the date">
+            </div>
+
+            <div class="result">
+
+            </div>
+
+            <button class="check" onclick="check()">check</button>
+        </div>
+    </div>
+
+
+    <script>
+
+const myBirthDate = "31032003"; 
+const date1= "31-03-2003";
+const date2= "31/03/2003"
+
+function check() {
+  const date = document.querySelector('#number').value;
+
+  if (date.length <10 && date.length<8 ) {
+    document.querySelector(".result").innerHTML = "Please enter the correct 8-digit birthday (DDMMYYYY)";
+  }
+  
+  else if (date == myBirthDate || date==date1 || date==date2) {
+    document.querySelector(".result").innerHTML = "Congratulations, you guessed the right date!";
+  }
+  
+  else {
+    document.querySelector(".result").innerHTML = "You guessed the wrong date, try again";
+  }
+}
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
