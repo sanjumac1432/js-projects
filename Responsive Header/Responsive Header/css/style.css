@@ -1,0 +1,146 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+.display-3 {
+    font-weight: 700;
+    color: #fa6524;
+    font-size: 40px;
+}
+
+.secH {
+
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.therdH {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 1rem 0 !important
+}
+
+
+.navbar {
+    padding: 10px 20px;
+}
+
+.container-flex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.Navbrand {
+    text-decoration: none;
+}
+
+.navbar-toggler {
+    border: none;
+    background-color: transparent;
+    display: none;
+}
+
+
+.navbar-toggler-icon {
+    font-size: 30px;
+    color: black;
+    cursor: pointer;
+}
+
+.navbar-collapse {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.navbar-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0 auto 0 auto;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-item .nav-link,.LoginPart a:not(a.btn) {
+    display: inline-block;
+    padding: 10px;
+    color: #fa6524;
+}
+.nav-item:hover .nav-link,.LoginPart a:not(a.btn):hover{
+color: #d44e15;
+}
+
+.LoginPart{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+}
+ .btn{
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    background-color: #fa6524;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+
+
+@media (max-width: 1399.98px) { ... }
+
+@media (max-width: 1199.98px) { ... }
+
+@media (max-width: 991.98px) { 
+    .navbar-toggler{
+        display: block;
+    } 
+    .navbar-collapse{
+        flex-basis: 100%;
+        height: 0px;
+        overflow: scroll;
+        transition: all 0.5s ease-in-out;
+    }
+  
+    .navbar-nav{
+     width: 100%;
+     flex-direction: column;
+     align-items: flex-start;
+    }
+    .navbar-nav .nav-link,.LoginPart a:not(a.btn), .navbar-nav .nav-item{
+        width: 100%;
+    }
+    .LoginPart{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+  
+    .navbar-collapse.show{
+        display: block;
+        height:228px;
+    }
+
+ }
+
+@media (max-width: 767.98px) { ... }
+
+@media (max-width: 575.98px) { ... }

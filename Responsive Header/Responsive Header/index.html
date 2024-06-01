@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="image/FeviconLogo.svg">
+  <title>Astra</title>
+  <script src="https://kit.fontawesome.com/52ca9e0df4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+ <header>
+  <nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-flex">
+      <a class="Navbrand display-3" href="#">Astra</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#NavControl1" aria-controls="NavControl1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><i class="fa-solid fa-bars"></i></span>
+      </button>
+      <div class="collapse navbar-collapse" id="NavControl1">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link2</a>
+          </li>
+         
+        </ul> 
+        <div class="LoginPart">
+          <a href="#">Login</a>
+          <a class="btn" href="#">Get started now</a>
+        </div>   
+      </div>
+    </div>
+  </nav>
+ </header> 
+
+ <section>
+  <img src="image/Screenshot 2024-05-19 102510.png" alt="">
+ </section>
+
+<script>
+  const togglerBtn = document.querySelector('.navbar-toggler');
+  const navbarcollapse =document.getElementById('NavControl1');
+   
+
+
+  togglerBtn.addEventListener("click", (e) => {
+    navbarcollapse.classList.toggle("show");
+
+});
+</script>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
